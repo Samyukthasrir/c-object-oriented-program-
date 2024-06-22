@@ -1,0 +1,47 @@
+#include <iostream>
+
+class Node {
+public:
+    int data;
+    Node* next;
+    Node* prev;
+    Node(int value) : data(value), next(nullptr), prev(nullptr) {}
+};
+
+class DoublyLinkedList {
+private:
+    Node* head;
+
+public:
+    DoublyLinkedList() : head(nullptr) {}
+
+    void insertAtBeginning(int data) {
+        Node* newNode = new Node(data);
+        if (head != nullptr) {
+            head->prev = newNode;
+        }
+        newNode->next = head;
+        head = newNode;
+    }
+
+    void display() {
+        Node* temp = head;
+        while (temp != nullptr) {
+            std::cout << temp->data << " ";
+            temp = temp->next;
+        }
+        std::cout << std::endl;
+    }
+};
+
+int main() {
+    DoublyLinkedList list;
+    list.insertAtBeginning(10);
+    list.insertAtBeginning(20);
+    list.insertAtBeginning(30);
+
+    std::cout << "Doubly Linked List: ";
+    list.display();
+
+    return 0;
+}
