@@ -1,0 +1,38 @@
+#include <iostream>
+
+int main() {
+    const int ROW = 2;
+    const int COL = 2;
+    int A[ROW][COL], B[ROW][COL], C[ROW][COL];
+
+    std::cout << "Enter elements of 2x2 matrix A:" << std::endl;
+    for (int i = 0; i < ROW; ++i) {
+        for (int j = 0; j < COL; ++j) {
+            std::cin >> A[i][j];
+        }
+    }
+
+    std::cout << "Enter elements of 2x2 matrix B:" << std::endl;
+    for (int i = 0; i < ROW; ++i) {
+        for (int j = 0; j < COL; ++j) {
+            std::cin >> B[i][j];
+        }
+    }
+
+    // Adding matrices A and B and storing result in C
+    for (int i = 0; i < ROW; ++i) {
+        for (int j = 0; j < COL; ++j) {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+
+    std::cout << "Resultant matrix C after addition:" << std::endl;
+    for (int i = 0; i < ROW; ++i) {
+        for (int j = 0; j < COL; ++j) {
+            std::cout << C[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+
+    return 0;
+}
