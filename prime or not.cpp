@@ -1,22 +1,28 @@
-#include<iostream>
-using namespace std;
-int main(){
-	int num,i=2,flag=0;
-	cout<<"enter the num:";
-	cin>>num;
-	while(i<num){
-		if(num%i==0){
-			flag=1;
-			break;
-		}
-		i++;
-	}
-	if(flag==1){
-		cout<<"it is not a prime number";
-	}
-	else{
-		cout<<"it is a prime number";
-	}
-	return 0;
+#include <iostream>
+
+int main() {
+    int num, i;
+    bool isPrime = true;
+
+    std::cout << "Enter a positive integer: ";
+    std::cin >> num;
+
+    if (num == 0 || num == 1) {
+        isPrime = false;
+    } else {
+        for (i = 2; i <= num / 2; ++i) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+
+    if (isPrime)
+        std::cout << num << " is a prime number." << std::endl;
+    else
+        std::cout << num << " is not a prime number." << std::endl;
+
+    return 0;
 }
-	
+
